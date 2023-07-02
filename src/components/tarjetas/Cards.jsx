@@ -1,7 +1,8 @@
-import Card from './Card';
+import Card from '../tarjeta/Card';
+import styles from './Cards.module.css';
 
 export default function Cards({characters}) {
-   return <div>
+   return (<div className={styles.FlexContainer}>
       {characters.map(element=>(
        <Card
          name={element.name}
@@ -14,5 +15,5 @@ export default function Cards({characters}) {
       /> 
    ))
       
-}   </div>;
+}</div>);
 }
