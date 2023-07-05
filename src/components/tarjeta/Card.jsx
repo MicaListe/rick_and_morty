@@ -11,18 +11,18 @@ export default function Card({name,status,species,gender,origin,image,onClose}) 
    <div class={styles.innerCard}>
     <div class={styles.frontSide}>
    </div>
-    <div class={styles.backSide}>   
- <h2 className={styles.nombre}>{name}</h2>
-      <div className={styles.img}>
+   <div class={styles.backSide}>   
+      <h2 className={styles.nombre}>{name}</h2>
+   <div className={styles.img}>
          <img src={image} alt={"not found"} />
-      </div>
-      <div className={styles.subtitulos}>
+   </div>
+   <div className={styles.subtitulos}>
       <h2>Status: {status}</h2>
       <h2> Species: {species}</h2>
       <h2>Gender: {gender}</h2>
       <h2>Origin: {origin}</h2>
-      </div>
-    </div>
+   </div>
+   </div>
    </div>
    </div>
 </div>

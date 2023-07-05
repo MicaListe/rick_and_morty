@@ -122,22 +122,18 @@
 } 
 
 .boton{
-  border-radius: 10px;
-  position: relative;
   left: 140px;
   top: 7px;
   cursor: pointer;
   color: #0a0a0a;
   padding: 5px 10px;
   font-weight: bold;
-  cursor: pointer;
   position: relative;
   outline: none;
   border-radius: 50px;
   border: none;
   background: #e0e0e0;
-  position: relative;
-  left: 140px;  
+  position: relative; 
 }
 
 
