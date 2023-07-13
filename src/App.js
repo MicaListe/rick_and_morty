@@ -1,16 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Cards from './components/tarjetas/Cards.jsx';
 import NavBar from './components/navegador/NavBar';
 import { useState } from 'react';
 import axios from 'axios';
+import { Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+import About from "./components/About/About.jsx"
+import Detail from "./components/Detail/Detail.jsx"
+import Form from "./components/Forms/Form.jsx"
+import Error from './components/Error/Error';
 
 function App() {
+
    const[characters, setCharacters] = useState([]) //Pasamos el estado y su actualizacion mediante destructuring
+   const navigate=useNavigate()
+   const [access, setAccess]=useState(false);
+   const EMAIL= "micaelaliste@gmail.com"
+   const PASSWORD= "Mica06"
+
+   useEffect(()=>{
+      !access && navigate("/");
+   }, [access])
+   
+
+   function login(userData){
+      if(userData.password === PASSWORD && userData.email===EMAIL){
+         setAccess(true);
+         navigate("/home")
+      }
+   }
+
+   function logOut(){
+      setAccess(true);
+      navigate("/")
+   }
+   
    function onSearch(id) {
       
       if (id < 826) {
-         const aleatorio= Math.floor(Math.random()*826)+1
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
            if (data.name) {
              const isCharacterExists = characters.find((characters) => characters.id === data.id); //Se crea un arrow. Find encuentra en el array el primer 
@@ -49,10 +76,19 @@ function App() {
       setCharacters(characters.filter((characters)=> characters.id !== id)) //Filtra y compara si el ID distinto
    }
 
+   
+   const location= useLocation()
+
    return (
       <div className='App'>
-         <NavBar onSearch={onSearch} personajeAleatorio={personajeAleatorio} />
-         <Cards characters={characters} onClose={onClose}/>
+         {location.pathname!=="/" && <NavBar onSearch={onSearch} personajeAleatorio={personajeAleatorio} logOut={logOut}/>}
+         <Routes>
+            <Route path="/" element={<Form login={login}/>}></Route>
+            <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}></Route>
+            <Route path="/about" element={<About/>}></Route>
+            <Route path="/detail/:id" element={<Detail/>}></Route>
+            <Route path="" element={<Error/>}></Route>
+         </Routes>
       </div>
    );
 }

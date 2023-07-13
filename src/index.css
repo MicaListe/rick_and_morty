@@ -8,7 +8,7 @@ body {
 
   background-image: url("./cielo.jpg") ;
   background-size: 2050px;
-  background-repeat: no-repeat;  
+  background-repeat: repeat;  
 }
 
 code {

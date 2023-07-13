@@ -5,7 +5,7 @@ export default function Cards({characters,onClose}) {
    return (<div className={styles.FlexContainer}>
       {characters.map(element=>(
        <Card
-         id={element.id}
+          id={element.id}
          name={element.name}
          status={element.status}
          species={element.species}
