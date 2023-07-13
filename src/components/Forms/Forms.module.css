@@ -1,8 +1,7 @@
 
-
 .group {
     position: relative;
-  }
+}
   
 .form {
     display: -webkit-box;
@@ -46,7 +45,7 @@
 
   
 .container {
-    padding-top: 30px;
+    padding-top: 50px;
 }
   
 .mainInput {
@@ -74,7 +73,10 @@
     margin-bottom: 15px;
 }
   
-  
+.mainInput:focus{
+    outline: none;
+    border-bottom-color: #42ff1c;
+} 
 .main:focus {
     outline: none;
     border-bottom-color: #42ff1c;
@@ -114,13 +116,14 @@
 }
   
 .highlightSpan {
-    position: absolute;
     height: 60%;
     width: 0px;
     top: 25%;
     left: 0;
     pointer-events: none;
     opacity: 0.5;
+    color: #42ff1c;
+    font-size: 15px;
 }
   
 .mainInput:focus .highlightSpan {
@@ -140,13 +143,15 @@
   
 .submit {
     padding: 10px 20px;
+
     border-radius: 10px;
-    margin-top: 5.2rem;
+    margin-top: 6.2rem;
     border-radius: 10px;
     width: 80px;
     height: 35px;
 }
 
-.p{
+/* .p{
     color:#42ff1c;
-}
+    font-size: 2px;
+} */

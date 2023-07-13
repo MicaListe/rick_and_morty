@@ -35,17 +35,14 @@ export default function Form({login}){
             <div className={styles.group}>
                 <label className={styles.lebalEmail}></label>
                 <input className={styles.mainInput} required="true" placeholder="Email" type="text" name="email"  value={userData.email} onChange={handleChange}></input> 
-                <span className={styles.highlightSpan}></span>
-                <p className={styles.p}>
-                    {errors.email}
-                </p>
+                <span className={styles.highlightSpan}>{errors.email}</span>
+                {/* <p></p> */}
             </div>
             <div className={styles.container}>
                 <div className={styles.group}>
-                <label className={styles.lebalPassword}></label>
+                <label htmlFor="password" className={styles.lebalPassword}></label>
                 <input className={styles.main} placeholder="Password" type="password" name="password" value={userData.password} onChange={handleChange}></input> 
-                <span className={styles.highlightSpan}></span>
-                <p className={styles.p}>{errors.password}</p>
+                <span className={styles.highlightSpan}>{errors.password}</span>
             </div>
             </div>
             <button className={styles.submit} type="submit">Login</button>
