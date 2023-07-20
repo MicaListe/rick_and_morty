@@ -123,8 +123,24 @@
 } 
 
 .boton{
-  left: 134px;
+  left: 114px;
   top: 45px;
+  cursor: pointer;
+  color: #0a0a0a;
+  padding: 5px 10px;
+  font-weight: bold;
+  position: relative;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  background: #e0e0e0;
+  position: relative; 
+  z-index: 1;
+  color: black
+}
+.rojo{
+  left: 26px;
+  top: 410px;
   cursor: pointer;
   color: #0a0a0a;
   padding: 5px 10px;

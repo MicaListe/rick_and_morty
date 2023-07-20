@@ -9,6 +9,7 @@ import About from "./components/About/About.jsx"
 import Detail from "./components/Detail/Detail.jsx"
 import Form from "./components/Forms/Form.jsx"
 import Error from './components/Error/Error';
+import Favorites from "./components/Favorites/Favorites"
 
 function App() {
 
@@ -88,6 +89,7 @@ function App() {
             <Route path="/about" element={<About/>}></Route>
             <Route path="/detail/:id" element={<Detail/>}></Route>
             <Route path="" element={<Error/>}></Route>
+            <Route path= "/favorites" element={<Favorites/>}></Route>
          </Routes>
       </div>
    );

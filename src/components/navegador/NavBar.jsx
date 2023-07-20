@@ -19,8 +19,10 @@ export default function NavBar({onSearch,personajeAleatorio}){
       <Link to= "/">
         <button className={styles.logOut}>Log Out</button>
       </Link>
+      <Link to= "/favorites">
+        <button className={styles.favoritos}>Favorites</button>
+      </Link>
      </div>
-      
     </nav>  
     )  
 }

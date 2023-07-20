@@ -22,14 +22,14 @@ export default function Detail(){
       <div class={styles.card}>
       <div class={styles.innerCard}>
         <div className={styles.card}>
-            {character.name && ( 
+            {character.name && (  
             <div className={styles.frontSide}>
                 <h2>{character.name}</h2>
                 <p><b>Status: </b>{character.status}</p>
                 <p><b>Species: </b>{character.species}</p>  
                 <p><b>Gender: </b>{character.gender}</p>
                 <p><b>Origin: </b>{character.origin.name}</p>
-                <img src={character.image} alt='Not Found'/> 
+                <img className={styles.img} src={character.image} alt='Not Found'/> 
                 </div>
              )}    
         </div> 

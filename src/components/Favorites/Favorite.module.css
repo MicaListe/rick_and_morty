@@ -1,0 +1,17 @@
+.FlexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    width: 98%;
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+}
+  
+.FlexContainer div {
+    width: 300px;
+    height: 418px;
+    margin: 5px;
+}

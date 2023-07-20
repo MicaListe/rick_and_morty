@@ -24,20 +24,20 @@
   height: 550px;
   margin-left: 410px;
   margin-top: 90px;
-
   flex-direction: column;
-  font-family: georgia, serif;
-  font-size: 12px;
   align-content:flex-start;
   text-align:center; 
   align-items:center;
   letter-spacing: 0.6pt;
   word-spacing: 1.8pt;
+  
 }
 
 .frontSide {
   position: absolute;
+  font-family: georgia, serif;
   display: flex;
+  font-size: 18px; 
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -95,5 +95,9 @@
   
 .fa-icon-beat {
   animation: fa-icon-beat 1s infinite;
+}
+
+.frontSide .img{
+  height: 230px;
 }
 
