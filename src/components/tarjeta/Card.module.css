@@ -51,9 +51,9 @@
   /* background-image: linear-gradient(160deg, #e4f5f3 0%, #015447 100%); */
 }
   
-.backSide {
+/* .backSide {
   transform: rotateY(180deg);
-} 
+}  */
   
 .frontSide::before,
 .backSide::before {
@@ -95,19 +95,19 @@
 }
 
 .card img{
-  width: 15em;
-  height: 15em; 
+  width: 13.5em;
+  height: 13.5em; 
   justify-content: center;
 }
 
 .nombre{
   font-family: 'EB Garamond', serif;
-  font-size: 1.8em;
+  font-size: 1.5em;
   justify-content: center;
-  margin-top: 2.5em;
+  /* margin-top: 2.5em; */
   word-spacing: 1.4pt;
   letter-spacing: 0.6pt;
-  margin: 25px ;
+  margin: 19px ;
   color: black;
 }
 
@@ -120,6 +120,7 @@
   align-items:center;
   letter-spacing: 0.6pt;
   word-spacing: 1.4pt;
+  margin-top: -10px;
 } 
 
 .boton{
@@ -140,14 +141,14 @@
 }
 .rojo{
   left: 26px;
-  top: 410px;
+  top: 424px;
   cursor: pointer;
   color: #0a0a0a;
-  padding: 5px 10px;
+  padding: 3px 10px;
   font-weight: bold;
   position: relative;
   outline: none;
-  border-radius: 10px;
+  border-radius: 15px;
   border: none;
   background: #e0e0e0;
   position: relative; 

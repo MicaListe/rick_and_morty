@@ -50,6 +50,7 @@ export function Card({name,status,species,gender,origin,image,onClose,id, addFav
          <img src={image} alt={"not found"} />
    </div>
    <div className={styles.subtitulos}>
+      <h2>N°: {id}</h2>
       {/* <h2>Status: {status}</h2>
       <h2> Species: {species}</h2>
       <h2>Gender: {gender}</h2>
