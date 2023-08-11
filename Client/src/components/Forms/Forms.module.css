@@ -1,0 +1,157 @@
+
+.group {
+    position: relative;
+}
+  
+.form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 120px 40px;
+    padding-top: 60px;
+    padding-bottom: 90px;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-radius: 20px;
+    position: relative;
+    width: 350px;
+    height: 450px;
+    left: 845px;
+    top: 200px;
+    background-image: url("./otra.jpg");
+    background-size:contain;
+}
+  
+.form p {
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    color: white;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+  
+.container {
+    padding-top: 50px;
+}
+  
+.mainInput {
+    font-size: 16px;
+    padding: 3px 10px 5px 10px;
+    display: flex;
+    width: 185px;
+    border: none;
+    border-bottom: 1px solid #6c6c6c;
+    background: transparent;
+    color: #ffffff;
+    margin-top: 20px;
+    
+}
+.main {
+    font-size: 16px;
+    padding: 4px 10px 5px 10px;
+    display: flex;
+    width: 185px;
+    border: none;
+    border-bottom: 1px solid #6c6c6c;
+    background: transparent;
+    color: #ffffff;
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+  
+.mainInput:focus{
+    outline: none;
+    border-bottom-color: #42ff1c;
+} 
+.main:focus {
+    outline: none;
+    border-bottom-color: #42ff1c;
+}
+  
+.lebalEmail {
+    color: #999999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 18px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.lebalPassword {
+    color: #999999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 1px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+  
+.mainInput:focus  .lebalEmail,
+.mainInput:valid  .lebalEmail {
+    top: -20px;
+    font-size: 14px;
+    color: #42ff1c;
+}
+  
+.highlightSpan {
+    height: 60%;
+    width: 0px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    color: #42ff1c;
+    font-size: 15px;
+}
+  
+.mainInput:focus .highlightSpan {
+    -webkit-animation: input-focus 0.3s ease;
+    animation: input-focus 0.3s ease;
+}
+  
+@keyframes input-focus {
+    from {
+      background: #42ff1c;
+    }
+  
+    to {
+      width: 185px;
+    }
+}
+  
+.submit {
+    padding: 10px 20px;
+
+    border-radius: 10px;
+    margin-top: 6.2rem;
+    border-radius: 10px;
+    width: 80px;
+    height: 35px;
+}
+
+/* .p{
+    color:#42ff1c;
+    font-size: 2px;
+} */
