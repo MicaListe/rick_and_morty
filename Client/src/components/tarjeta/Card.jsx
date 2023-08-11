@@ -18,6 +18,7 @@ export function Card({name,status,species,gender,origin,image,onClose,id, addFav
          }
       });
    }, [myfavorites]);
+   
 
    function handleFavorite(){
       if(isFav === true){

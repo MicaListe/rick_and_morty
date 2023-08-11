@@ -7,16 +7,21 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_FAV':
 
-            return { ...state, myFavorites: action.payload, allCharacters: action.payload };
+            return { ...state, myfavorites: action.payload, allCharacters: action.payload }; //myfavorites NO myFavorites
         case 'REMOVE_FAV':
-            return { ...state, myFavorites: action.payload };
+            return { ...state, myfavorites: action.payload };
+            // case 'REMOVE_FAV':
+            //     return {
+            //         ...state,
+            //         myFavorites: state.myFavorites.filter(fav => fav.id !== action.payload) // Filtrar para eliminar el personaje con el ID correspondiente
+            //     };
             
         case 'FILTER_FAV':
             if (action.payload === 'All') {
-                return { ...state, myFavorites: [...state.allCharacters] };
+                return { ...state, myfavorites: [...state.allCharacters] };
             } else {
                 const filteredCharacters  = state.allCharacters.filter((fav) => fav.gender === action.payload);
-                return { ...state, myFavorites: filteredCharacters };
+                return { ...state, myfavorites: filteredCharacters };
             }
            
 
@@ -24,9 +29,9 @@ const reducer = (state = initialState, action) => {
             const orden= [...state.myfavorites]
             orden.sort((a,b)=>{
                 if(action.payload==="A"){
-                    return a.id - b.id 
-                }else{
-                    return b.id - a.id
+                    return a.id - b.id
+                } else if (action.payload === "D") { // Orden descendente
+                    return b.id - a.id;
                 }
             })
             return{

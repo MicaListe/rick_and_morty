@@ -11,12 +11,14 @@ let myFavorites=[]
     myFavorites=myFavorites.filter((characters)=>characters.id !== eliminar)
     res.json(myFavorites)
 
-    //OTRA MANERA
-    //const{id}=req.params
-    //const filtered=myFavorites.filter(fav=>fav.id !== numbrer(id))
-    //myFavorites=filtered
-    //res.json(myFavorites)
+    // OTRA MANERA
+    // const{id}=req.params
+    // const filtered=myFavorites.filter(fav=>fav.id !== numbrer(id))
+    // myFavorites=filtered
+    // res.json(myFavorites)
 
 }
 module.exports= {postFav ,deleteFav}
+
+
 

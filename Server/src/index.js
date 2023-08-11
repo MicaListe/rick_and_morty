@@ -30,12 +30,15 @@ const server = express();
 const routes=require('./routes')
 const PORT = 3001;
 
+const cors= require("cors") //A esto le falta a santi para que le ande
+server.use(cors())
 
 server.listen(PORT, () => {
    console.log('Server raised in port: ' + PORT);
 });
 server.use(express.json())
 server.use("/rickandmorty", routes)
+
 
 server.use((req, res, next) => {
    res.header('Access-Control-Allow-Origin', '*');
