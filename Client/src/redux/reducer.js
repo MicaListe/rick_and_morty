@@ -6,16 +6,15 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_FAV':
+            return { ...state, myfavorites: action.payload, allCharacters: action.payload };
 
-            return { ...state, myfavorites: action.payload, allCharacters: action.payload }; //myfavorites NO myFavorites
         case 'REMOVE_FAV':
-            return { ...state, myfavorites: action.payload };
+            return { ...state, allCharacters: action.payload, myfavorites: action.payload};
             // case 'REMOVE_FAV':
             //     return {
             //         ...state,
-            //         myFavorites: state.myFavorites.filter(fav => fav.id !== action.payload) // Filtrar para eliminar el personaje con el ID correspondiente
-            //     };
-            
+            //         myfavorites: state.myfavorites.filter(fav => fav.id !== action.payload) // Filtrar para eliminar el personaje con el ID correspondiente
+            //     }; 
         case 'FILTER_FAV':
             if (action.payload === 'All') {
                 return { ...state, myfavorites: [...state.allCharacters] };

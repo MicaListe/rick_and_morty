@@ -24,14 +24,18 @@ function App() {
    }, [access])
    
 
-   function login(userData) {
-      const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
-         setAccess(access);
-         access && navigate('/home');
-      });
+   async function login(userData) {
+      try{
+         const { email, password } = userData;
+         const URL = 'http://localhost:3001/rickandmorty/login/';
+         const {data}= await axios(URL + `?email=${email}&password=${password}`)
+            const { access } = data;
+            setAccess(access);
+            access && navigate('/home');
+      }catch(error){
+         console.error(error.message)
+      }
+    
    }
 
    function logOut(){
@@ -39,29 +43,33 @@ function App() {
       navigate("/")
    }
    
-   function onSearch(id) {
-      
-      if (id < 826) {
-         axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-           if (data.name) {
-             const isCharacterExists = characters.find((characters) => characters.id === data.id); //Se crea un arrow. Find encuentra en el array el primer 
+   async function onSearch(id) {
+      try{
+         if (id < 826) {
+            const{data}= await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+            if (data.name) {
+               const isCharacterExists = characters.find((characters) => characters.id === data.id); //Se crea un arrow. Find encuentra en el array el primer 
                                                                                                  //elemento que coincida con el solicitado. Pide que en character
                                                                                                  // el id ingresado coincida con el de data.  
-             if (!isCharacterExists) {
-               setCharacters((characters) => [...characters, data]); //Si el id no se repite, actualiza characters agregando el nuevo personaje
-             } else {
-               window.alert('¡El personaje ya está en la lista!');
-             }
-           }
-         });
-       } else {
+               if (!isCharacterExists) {
+                  setCharacters((characters) => [...characters, data]); //Si el id no se repite, actualiza characters agregando el nuevo personaje
+               } else {
+                  window.alert('¡El personaje ya está en la lista!');
+               }
+            }
+         } else {
          window.alert('¡No hay personajes con este ID!');
        }
-     }
+      }catch(error){
+         window.alert(error.response.data)
+      }
+     
+   }
 
    function personajeAleatorio() {
       
       const aleatorio= Math.floor(Math.random() * 826) + 1
+         
          axios(`https://rickandmortyapi.com/api/character/${aleatorio}`).then(({ data }) => {
             if (data.name) {
                const isCharacterExists=characters.find((characters)=>characters.id === data.id)//arrow function para que no se repitan las cards cuando llamemos por id
