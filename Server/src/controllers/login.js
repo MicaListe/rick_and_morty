@@ -29,7 +29,7 @@ const login = (req, res) => {
         if (user.email === email && user.password === password) {
             access = true;
         }
-    });
+    })
 
     if (access) {
         return res.status(200).json({ access: true });
@@ -38,9 +38,7 @@ const login = (req, res) => {
     }
 };
 
-module.exports = 
-    login
-;
+module.exports = login;
 
 
 

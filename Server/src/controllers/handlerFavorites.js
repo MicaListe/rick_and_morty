@@ -1,8 +1,8 @@
 let myFavorites=[]
 
  const postFav=(req,res)=>{
-    myFavorites.push(req.body)//Mejor manera: ? req.body =>{id, name, status}=req.body
-    res.json(myFavorites)      //ojo si viene un id repetido 
+    myFavorites.push(req.body)
+    res.json(myFavorites)     
 
 }
 
