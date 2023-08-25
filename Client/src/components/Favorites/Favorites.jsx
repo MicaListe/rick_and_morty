@@ -30,7 +30,7 @@ export function Favorites({myfavorites}){
       <option value="Male"> Male</option>
       <option value="Female"> Female</option>
       <option value="Genderless"> Genderless</option>
-      <option value="unknown"> Unknown</option>
+      <option value="Unknown"> Unknown</option>
      
     </select>
 

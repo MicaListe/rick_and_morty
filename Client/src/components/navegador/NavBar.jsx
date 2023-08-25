@@ -3,12 +3,10 @@ import styles from "./Nav.module.css"
 import { Link } from "react-router-dom";
 
 export default function NavBar({onSearch,personajeAleatorio}){
-
-
    return(
     <nav> 
       <SearchBar onSearch={onSearch}/>
-      <button className={styles.boton}onClick={personajeAleatorio}> Agregar aleatorio </button>
+      <button className={styles.boton}onClick={personajeAleatorio}> Random </button>
      <div >
       <Link to= "/about" >
         <button className={styles.about}>About</button>
