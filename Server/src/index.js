@@ -29,13 +29,33 @@ const express = require('express');
 const server = express();
 const routes=require('./routes')
 const PORT = 3001;
+const {conn} = require('./DB_connection')
+const {User} = require ('./models/User')
 
-const cors= require("cors") //A esto le falta a santi para que le ande
+const cors= require("cors") 
 server.use(cors())
 
-server.listen(PORT, () => {
+
+conn.sync({force:true})
+.then(()=>{
+   server.listen(PORT, () => {
    console.log('Server raised in port: ' + PORT);
-});
+   });
+})
+// .then(async()=>{ //Comprobar un nuevo usuario
+//    try{
+//       const newUser= await User.create({
+//          email:
+//          password:
+//       })
+//    }catch(error){
+//       console.log(error)
+//    }
+// })
+.catch(error =>{
+   console.log(error)
+})
+
 server.use(express.json())
 server.use("/rickandmorty", routes)
 

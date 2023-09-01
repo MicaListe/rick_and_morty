@@ -21,20 +21,19 @@
 // })
 
 const axios = require("axios");
- const URL = "https://rickandmortyapi.com/api/character";
+const URL = "https://rickandmortyapi.com/api/character";
 
 const getCharById=async(req, res)=>{
-    try{const {id}=req.params
-    const {data}=await axios(`${URL}/${id}`)
-    if({id}){
-        res.json({id:id,name:data.name,gender:data.gender,species:data.species,origin:data.origin,image:data.image,status:data.status})
-    }else{
-        res.end(404,"Not fount")
-    }
-
+    try{
+        const {id}=req.params
+        const {data}=await axios(`${URL}/${id}`)
+        if({id}){
+            res.json({id:id,name:data.name,gender:data.gender,species:data.species,origin:data.origin,image:data.image,status:data.status})
+        }else{
+            res.end(404,"Not fount")
+        }
     }catch(error){
-        res.status(500).json({ error: error.message });
-        
+        res.status(500).json({ error: error.message });   
     }
     
 }
