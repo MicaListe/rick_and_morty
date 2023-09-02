@@ -1,4 +1,4 @@
-const {User} = require("DB_connection") //Ver si esta bien importado
+const {User} = require("../DB_connection") //Ver si esta bien importado
 
 const postUser = async(req, res)=>{
     try{

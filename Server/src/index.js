@@ -30,7 +30,7 @@ const server = express();
 const routes=require('./routes')
 const PORT = 3001;
 const {conn} = require('./DB_connection')
-const {User} = require ('./models/User')
+// const {User} = require ('./models/User')
 
 const cors= require("cors") 
 server.use(cors())
