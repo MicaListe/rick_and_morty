@@ -59,7 +59,6 @@ conn.sync({force:true})
 server.use(express.json())
 server.use("/rickandmorty", routes)
 
-
 server.use((req, res, next) => {
    res.header('Access-Control-Allow-Origin', '*');
    res.header('Access-Control-Allow-Credentials', 'true');
